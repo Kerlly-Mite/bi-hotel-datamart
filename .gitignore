@@ -1,0 +1,12 @@
+# Datos generados (se reconstruyen con python/01_limpieza.py)
+data/processed/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db

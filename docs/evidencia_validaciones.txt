@@ -1,0 +1,57 @@
+       validacion       | filas_staging | filas_hechos | resultado 
+------------------------+---------------+--------------+-----------
+ V1.1 staging vs hechos |        118563 |       118563 | OK
+(1 row)
+
+         tabla         | filas  
+-----------------------+--------
+ dim_fecha             |   1096
+ dim_hotel             |      2
+ dim_cliente           |    442
+ dim_canal             |     26
+ dim_habitacion        |     73
+ dim_condicion_reserva |     11
+ dim_estado_reserva    |      3
+ fact_reservas         | 118563
+(8 rows)
+
+         validacion         | sin_fecha | sin_hotel | sin_cliente | sin_canal | sin_habitacion | sin_condicion | sin_estado | resultado 
+----------------------------+-----------+-----------+-------------+-----------+----------------+---------------+------------+-----------
+ V2 huérfanos por dimensión |         0 |         0 |           0 |         0 |              0 |             0 |          0 | OK
+(1 row)
+
+        validacion         | cantidad | resultado 
+---------------------------+----------+-----------
+ V2.2 hoteles sin reservas |        0 | OK
+(1 row)
+
+          validacion          | nulos_en_claves | nulos_en_medidas | resultado 
+------------------------------+-----------------+------------------+-----------
+ V3 nulos en claves y medidas |               0 |                0 | OK
+(1 row)
+
+     validacion      | total_staging | total_hechos | resultado 
+---------------------+---------------+--------------+-----------
+ V4.1 noches totales |        408432 |       408432 | OK
+(1 row)
+
+        validacion        | total_staging | total_hechos | resultado 
+--------------------------+---------------+--------------+-----------
+ V4.2 reservas canceladas |         44175 |        44175 | OK
+(1 row)
+
+      validacion       | total_staging | total_hechos | resultado 
+-----------------------+---------------+--------------+-----------
+ V4.3 ingreso estimado |   42708813.15 |  42708813.15 | OK
+(1 row)
+
+ total_reservas | canceladas | tasa_cancelacion_pct | noches_totales | adr_promedio_simple | ingresos_confirmados 
+----------------+------------+----------------------+----------------+---------------------+----------------------
+         118563 |      44175 |                37.26 |         408432 |              102.48 |          25986976.03
+(1 row)
+
+         validacion          | inconsistencias | resultado 
+-----------------------------+-----------------+-----------
+ V4.5 estado vs es_cancelada |               0 | OK
+(1 row)
+

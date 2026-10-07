@@ -1,0 +1,39 @@
+=== LOG DE LIMPIEZA - hotel_bookings.csv ===
+Filas originales: 119,390  |  Columnas originales: 32
+
+[1] Columnas descartadas
+    - company: 94.3% de nulos -> columna eliminada
+    - agent: 13.7% de nulos -> columna eliminada
+
+[2] Tratamiento de valores nulos
+    - children: 4 nulos -> 0
+    - country: 488 nulos -> 'UNK' (desconocido)
+
+[3] Categorías 'Undefined'
+    - meal: 1,169 'Undefined' -> 'SC' (sin plan de comida)
+    - market_segment: 2 'Undefined' -> 'Unknown'
+    - distribution_channel: 5 'Undefined' -> 'Unknown'
+
+[4] Filas inválidas eliminadas
+    - Reservas con 0 huéspedes: 180
+    - Reservas con 0 noches: 715
+    - ADR negativo: 1
+    - ADR atípico (> 1000): 1
+    Total eliminadas (sin doble conteo): 827
+
+[5] Construcción de la fecha de llegada
+    - arrival_date_year/month/day_of_month -> fecha_llegada (YYYY-MM-DD)
+    - Rango: 2015-07-01 a 2017-08-31
+
+[6] Filas duplicadas
+    - 31,952 filas idénticas. NO se eliminan: el dataset no tiene un ID de reserva,
+      así que no se puede distinguir un duplicado real de dos reservas distintas
+      con las mismas características (ej. una familia que reserva 2 habitaciones iguales).
+
+[7] Columnas renombradas a español y reordenadas
+
+=== RESUMEN ===
+Filas originales : 119,390
+Filas finales    : 118,563  (827 eliminadas, 0.69%)
+Columnas finales : 27
+Archivo generado : data\processed\hotel_clean.csv
