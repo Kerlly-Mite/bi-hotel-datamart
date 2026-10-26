@@ -33,7 +33,7 @@ bi-hotel-datamart/
 │   └── requirements.txt        # streamlit, psycopg2-binary, pandas
 ├── scripts/                    # ejecutar_todo.ps1 (Windows) / ejecutar_todo.sh
 ├── mockup/                     # mockup_e3.html (mockup final)
-└── docs/                       # documento final, matriz de trazabilidad, mockups, evidencias
+└── docs/
 ```
 
 ## Requisitos
