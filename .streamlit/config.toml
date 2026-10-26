@@ -1,0 +1,15 @@
+# Tema visual del dashboard. Streamlit lo lee si ejecutas el comando desde la
+# raíz del proyecto:  streamlit run streamlit_app/app.py
+[theme]
+base = "light"
+primaryColor = "#0f766e"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#eef5f4"
+textColor = "#1f2a37"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"   # oculta el botón Deploy y el menú (más limpio para el video)
+
+[browser]
+gatherUsageStats = false
